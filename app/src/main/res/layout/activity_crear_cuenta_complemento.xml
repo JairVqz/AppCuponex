@@ -43,6 +43,20 @@
             app:layout_constraintStart_toStartOf="@+id/textView13"
             app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/str_tv_nombre_registro"
+            android:textColor="#040404"
+            android:textSize="22sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.11"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView13"
+            app:layout_constraintVertical_bias="0.072" />
+
         <EditText
             android:id="@+id/etNombreCrearCuentaComplemento"
             android:layout_width="325dp"
@@ -58,20 +72,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.212" />
-
-        <TextView
-            android:id="@+id/textView11"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/str_tv_nombre_registro"
-            android:textColor="#040404"
-            android:textSize="22sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.11"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView13"
-            app:layout_constraintVertical_bias="0.072" />
 
         <TextView
             android:id="@+id/textView12"
@@ -150,7 +150,7 @@
             android:layout_marginTop="4dp"
             android:ems="10"
             android:hint="@string/str_campo_telefono_registro"
-            android:inputType="textPersonName"
+            android:inputType="phone"
             android:textColor="#000000"
             android:textSize="22sp"
             app:layout_constraintEnd_toEndOf="@+id/textView16"

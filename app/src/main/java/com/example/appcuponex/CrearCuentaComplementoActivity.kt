@@ -10,7 +10,6 @@ import java.util.Calendar
 
 class CrearCuentaComplementoActivity : AppCompatActivity() {
 
-    private lateinit var etCorreo : TextView
     private lateinit var etNombre : EditText
     private lateinit var etApellidoPaterno : EditText
     private lateinit var etApellidoMaterno : EditText
@@ -18,13 +17,15 @@ class CrearCuentaComplementoActivity : AppCompatActivity() {
     private lateinit var etDireccion : EditText
     private lateinit var  dpFechaNacimiento : DatePicker
 
+    private var correo = ""
+    private var password  = ""
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_crear_cuenta_complemento)
 
-        val correo = intent.extras!!.getSerializable("correo") as String?
-        etCorreo = findViewById(R.id.tvCorreoCrearCuentaComplemento)
-        etCorreo.append("" + correo)
+        correo = (intent.extras!!.getSerializable("correo") as String?).toString()
+        password = (intent.extras!!.getSerializable("password") as String?).toString()
 
         etNombre = findViewById(R.id.etNombreCrearCuentaComplemento)
         etApellidoPaterno = findViewById(R.id.etApellidoPaternoCrearCuentaComplemento)
@@ -45,11 +46,10 @@ class CrearCuentaComplementoActivity : AppCompatActivity() {
 
     fun verificarCamposCrearCuenta(){
         var camposValidos = true
-        var correoTx = etCorreo.text.toString()
         var nombreTx = etNombre.text.toString()
         var apellidoPaternoTx = etApellidoPaterno.text.toString()
         var apellidoMaternoTx = etApellidoMaterno.text.toString()
-
+        var telefono = etTelefono.text.toString()
 
         if (nombreTx.isEmpty()){
             etNombre.setError("Nombre requerido")
@@ -70,23 +70,32 @@ class CrearCuentaComplementoActivity : AppCompatActivity() {
             { view, year, month, day ->
                 val month = month + 1
                 val msg = "$year/$month/$day"
-                verificarUsuarioCrearCuenta(correoTx, nombreTx, apellidoPaternoTx, apellidoMaternoTx, msg)
+
+                verificarUsuarioCrearCuenta(nombreTx,apellidoPaternoTx,apellidoMaternoTx, telefono.toInt(),
+                                            correo,etDireccion.text.toString(),msg,password)
             }
 
         }
 
     }
 
-    fun verificarUsuarioCrearCuenta(correo : String, nombre: String, apellidoPaterno : String, apellidoMaterno : String, fechaNacimiento : String){
+    fun verificarUsuarioCrearCuenta(nombre: String, apellidoPaterno : String, apellidoMaterno : String, telefono : Int,
+                                    correo : String,direccion : String , fechaNacimiento : String, password : String
+                                    ){
+
         Ion.getDefault(this@CrearCuentaComplementoActivity).conscryptMiddleware.enable(false)
+
         Ion.with(this@CrearCuentaComplementoActivity)
-            .load("POST", Constantes.URL_WS+"usuarios/registrarComplemento")
+            .load("POST", Constantes.URL_WS+"usuarios/registrar")
             .setHeader("Content-Type", "application/x-www-form-urlencoded")
-            .setBodyParameter("correo", correo)
             .setBodyParameter("nombre", nombre)
             .setBodyParameter("apellidoPaterno", apellidoPaterno)
             .setBodyParameter("apellidoMaterno", apellidoMaterno)
+            .setBodyParameter("telefono", telefono.toString())
+            .setBodyParameter("correo", correo)
+            .setBodyParameter("direccion", direccion)
             .setBodyParameter("fechaNacimiento", fechaNacimiento)
+            .setBodyParameter("password", password)
             .asString()
             .setCallback { e, result ->
                 if (e != null){

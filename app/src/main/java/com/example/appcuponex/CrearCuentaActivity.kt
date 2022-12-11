@@ -44,35 +44,31 @@ class CrearCuentaActivity : AppCompatActivity() {
             camposValidos = false
         }
         if (passwordTx.isEmpty() || passwordConfirmTx.isEmpty()){
-            etPassword.setError("Contraseña requerida")
-            camposValidos = false
+            //etPassword.setError("Contraseña requerida")
+            //camposValidos = false
+
+            if(!passwordTx.equals(passwordConfirmTx) ){
+                etPassword.setError("Las contraseñas no coinciden")
+                camposValidos = false
+            }
+
         }
         if (camposValidos){
-            verficarUsuarioCrearCuenta(correoTx, passwordTx)
+            //verficarUsuarioCrearCuenta(correoTx, passwordTx)
+            verificar(correoTx,passwordTx)
         }
-    }
-
-    fun verficarUsuarioCrearCuenta(correo: String, password : String){
-        Ion.getDefault(this@CrearCuentaActivity).conscryptMiddleware.enable(false)
-        Ion.with(this@CrearCuentaActivity)
-            .load("POST", Constantes.URL_WS+"usuarios/registrar")
-            .setHeader("Content-Type", "application/x-www-form-urlencoded")
-            .setBodyParameter("correo",correo)
-            .setBodyParameter("password",password)
-            .asString()
-            .setCallback { e, result ->
-                if (e != null){
-                    mostrarAlerta("Error de conexión")
-                }else{
-                    val intent = Intent(this@CrearCuentaActivity,CrearCuentaComplementoActivity::class.java)
-                    intent.putExtra("correo", correo)
-                    startActivity(intent)
-                }
-            }
     }
 
     private fun mostrarAlerta(mensaje: String){
         Toast.makeText(this@CrearCuentaActivity, mensaje, Toast.LENGTH_LONG).show()
+    }
+
+    fun verificar(correo: String, password: String){
+        val intent = Intent(this@CrearCuentaActivity,CrearCuentaComplementoActivity::class.java)
+        intent.putExtra("correo", correo)
+        intent.putExtra("password", password)
+        //Toast.makeText(this@CrearCuentaActivity,"Correo:  $correo ||| password: $password |||",Toast.LENGTH_LONG).show()
+        startActivity(intent)
     }
 
 

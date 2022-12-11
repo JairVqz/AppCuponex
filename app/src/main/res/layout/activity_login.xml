@@ -42,7 +42,7 @@
         android:layout_height="49dp"
         android:ems="10"
         android:hint="@string/str_campo_correo_login"
-        android:inputType="textPersonName"
+        android:inputType="textEmailAddress"
         android:textColor="#090909"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"

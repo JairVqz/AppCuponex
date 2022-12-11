@@ -6,51 +6,20 @@
     android:layout_height="match_parent"
     tools:context=".CrearCuentaActivity">
 
-
-    <EditText
-        android:id="@+id/etConfirmarPasswordCrearCuenta"
-        android:layout_width="325dp"
-        android:layout_height="49dp"
-        android:ems="10"
-        android:hint="@string/str_campo_confirmarpassword_registro"
-        android:inputType="textPassword"
-        android:textColor="#000000"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.406"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.766" />
-
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/str_tv_confirmarpassword_registro"
+        android:text="@string/str_titulo_registro"
         android:textColor="#000000"
-        android:textSize="24sp"
+        android:textSize="34sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.675" />
-
-    <EditText
-        android:id="@+id/etCorreoCrearCuenta"
-        android:layout_width="325dp"
-        android:layout_height="49dp"
-        android:ems="10"
-        android:hint="@string/str_campo_correo_registro"
-        android:inputType="textPersonName"
-        android:textColor="#000000"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.406"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.346" />
+        app:layout_constraintVertical_bias="0.098" />
 
     <TextView
         android:id="@+id/textView7"
@@ -65,6 +34,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.263" />
+
+    <EditText
+        android:id="@+id/etCorreoCrearCuenta"
+        android:layout_width="325dp"
+        android:layout_height="49dp"
+        android:ems="10"
+        android:hint="@string/str_campo_correo_registro"
+        android:inputType="textEmailAddress"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.406"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.346" />
 
     <TextView
         android:id="@+id/textView8"
@@ -97,19 +82,33 @@
         app:layout_constraintVertical_bias="0.558" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/str_titulo_registro"
+        android:text="@string/str_tv_confirmarpassword_registro"
         android:textColor="#000000"
-        android:textSize="34sp"
-        android:textStyle="bold"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.098" />
+        app:layout_constraintVertical_bias="0.675" />
+
+    <EditText
+        android:id="@+id/etConfirmarPasswordCrearCuenta"
+        android:layout_width="325dp"
+        android:layout_height="49dp"
+        android:ems="10"
+        android:hint="@string/str_campo_confirmarpassword_registro"
+        android:inputType="textPassword"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.406"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.766" />
 
     <Button
         android:id="@+id/btnCrearCuentaUsuario"
