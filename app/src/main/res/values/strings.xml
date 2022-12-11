@@ -1,0 +1,53 @@
+<resources>
+    <string name="app_name">Cuponex</string>
+
+    <!-- Main Activity -->
+    <string name="str_titulo_app">Cuponex</string>
+
+    <!-- Login Activity -->
+    <string name="str_titulo_login">Iniciar Sesión</string>
+    <string name="str_tv_correo_login">Correo:</string>
+    <string name="str_campo_correo_login">example@gmail.com</string>
+    <string name="str_tv_password_login">Contraseña:</string>
+    <string name="str_campo_password_login">********</string>
+    <string name="str_btn_ingresar_login">Ingresar</string>
+    <string name="str_btn_registro_login">Crear Cuenta</string>
+
+    <!-- Crear Cuenta Activity -->
+    <string name="str_titulo_registro">Crear Cuenta</string>
+    <string name="str_tv_correo_registro">Correo:</string>
+    <string name="str_campo_correo_registro">example@gmail.com</string>
+    <string name="str_tv_password_registro">Contraseña:</string>
+    <string name="str_campo_password_registro">********</string>
+    <string name="str_tv_confirmarpassword_registro">Ingresa de nuevo tu contraseña:</string>
+    <string name="str_campo_confirmarpassword_registro">********</string>
+    <string name="str_btn_registro_crearcuenta">Crear Cuenta</string>
+
+    <!-- Crear Cuenta Complemento Activity -->
+    <string name="str_titulo_complemento_crear_cuenta">Para completar el registro, proporciona los siguientes datos:</string>
+    <string name="str_tv_nombre_registro">Nombre:</string>
+    <string name="str_campo_nombre_registro">Escribe aquí tu nombre</string>
+    <string name="str_tv_apellidoPaterno_registro">Apellido Paterno:</string>
+    <string name="str_campo_apellidoPaterno_registro">Escribe aquí tu apellido paterno</string>
+    <string name="str_tv_apellidoMaterno_registro">Apellido Materno:</string>
+    <string name="str_campo_apellidoMaterno_registro">Escribe aquí tu apellido materno</string>
+    <string name="str_tv_telefono_registro">Telefono:</string>
+    <string name="str_campo_telefono_registro">2280001122</string>
+    <string name="str_tv_direccion_registro">Dirección:</string>
+    <string name="str_campo_direccion_registro">Escribe aquí tu calle y número</string>
+    <string name="str_tv_fechaNacimiento_registro">Fecha de Nacimiento:</string>
+    <string name="str_btn_guardar_datos_crear_cuenta">Guardar Datos</string>
+    
+    <!-- Perfil Usuario Activity -->
+    <string name="str_titulo_perfil_usuario">Información de la cuenta</string>
+    <string name="str_tv_nombre_perfil_usuario">Nombre:</string>
+    <string name="str_tv_apellidoPaterno_perfil_usuario">Apellido Paterno:</string>
+    <string name="str_tv_apellidoMaterno_perfil_usuario">Apellido Materno:</string>
+    <string name="str_tv_telefono_perfil_usuario">Telefono:</string>
+    <string name="str_tv_direccion_perfil_usuario">Dirección:</string>
+    <string name="str_tv_fechaNacimiento_perfil_usuario">Fecha de Nacimiento:</string>
+    <string name="str_campo_fechaNacimiento_perfil_usuario">Fecha de nacimiento</string>
+    <string name="str_tv_password_perfil_usuario">Contraseña:</string>
+    <string name="str_btn_editar_datos_perfil_usuario">Guardar cambios</string>
+
+</resources>

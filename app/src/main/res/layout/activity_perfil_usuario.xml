@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PerfilUsuarioActivity">
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navPerfil"
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/menu_bar"
+        app:itemTextColor="@drawable/colors_menu"
+        app:itemIconTint="@drawable/colors_menu"
+        android:background="@drawable/border"
+        android:layout_height="wrap_content"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="672dp"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:id="@+id/textView17"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/str_titulo_perfil_usuario"
+                android:textSize="24sp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="20dp"
+                android:padding="10dp"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/textView18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:text="@string/str_tv_nombre_perfil_usuario"
+                android:layout_marginTop="120dp"
+                android:textSize="22sp"
+                android:textColor="@color/black"/>
+
+            <EditText
+                android:id="@+id/etNombrePerfilUsuario"
+                android:layout_width="325dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text=""
+                android:layout_marginTop="150dp"
+                android:layout_marginLeft="40dp"
+                android:textSize="22sp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/textView19"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:text="@string/str_tv_apellidoPaterno_perfil_usuario"
+                android:layout_marginTop="220dp"
+                android:textSize="22sp"
+                android:textColor="@color/black"/>
+
+            <EditText
+                android:id="@+id/etApellidoPaternoPerfilUsuario"
+                android:layout_width="325dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text=""
+                android:layout_marginTop="250dp"
+                android:layout_marginLeft="40dp"
+                android:textSize="22sp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/textView20"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:text="@string/str_tv_apellidoMaterno_perfil_usuario"
+                android:layout_marginTop="320dp"
+                android:textSize="22sp"
+                android:textColor="@color/black"/>
+
+            <EditText
+                android:id="@+id/etApellidoMaternoPerfilUsuario"
+                android:layout_width="325dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text=""
+                android:layout_marginTop="350dp"
+                android:layout_marginLeft="40dp"
+                android:textSize="22sp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/textView21"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:text="@string/str_tv_telefono_perfil_usuario"
+                android:layout_marginTop="420dp"
+                android:textSize="22sp"
+                android:textColor="@color/black"/>
+
+            <EditText
+                android:id="@+id/etTelefonoPerfilUsuario"
+                android:layout_width="325dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text=""
+                android:layout_marginTop="450dp"
+                android:layout_marginLeft="40dp"
+                android:textSize="22sp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/textView22"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:text="@string/str_tv_direccion_perfil_usuario"
+                android:layout_marginTop="520dp"
+                android:textSize="22sp"
+                android:textColor="@color/black"/>
+
+            <EditText
+                android:id="@+id/etDireccionPerfilUsuario"
+                android:layout_width="325dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text=""
+                android:layout_marginTop="550dp"
+                android:layout_marginLeft="40dp"
+                android:textSize="22sp"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/textView23"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="100dp"
+                android:text="@string/str_campo_fechaNacimiento_perfil_usuario"
+                android:layout_marginTop="620dp"
+                android:textSize="22sp"
+                android:textColor="@color/black"/>
+
+            <DatePicker
+                android:id="@+id/dpFechaNacimientoCrearCuentaComplemento"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:calendarViewShown="false"
+                android:datePickerMode="spinner"
+                android:layout_marginTop="650dp"
+                android:layout_marginLeft="80dp"/>
+
+            <TextView
+                android:id="@+id/textView24"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:text="@string/str_tv_password_perfil_usuario"
+                android:layout_marginTop="890dp"
+                android:textSize="22sp"
+                android:textColor="@color/black"/>
+
+            <EditText
+                android:id="@+id/etPasswordPerfilUsuario"
+                android:layout_width="325dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textVisiblePassword"
+                android:text=""
+                android:layout_marginTop="920dp"
+                android:layout_marginLeft="40dp"
+                android:textSize="22sp"
+                android:textColor="@color/black"/>
+
+            <Button
+                android:id="@+id/btnGuardarCambiosPerfilUsuario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/etPasswordPerfilUsuario"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="39dp"
+
+                android:text="@string/str_btn_editar_datos_perfil_usuario"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
