@@ -3,15 +3,44 @@ package com.example.appcuponex
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.DatePicker
+import android.widget.EditText
+import android.widget.Toast
+import com.example.appcuponex.poko.Usuario
+import com.example.appcuponex.util.Constantes
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.gson.Gson
+import com.koushikdutta.ion.Ion
 
 class PerfilUsuarioActivity : AppCompatActivity() {
 
     private lateinit var nav : BottomNavigationView
 
+    private lateinit var etNombrePerfilUsuario : EditText
+    private lateinit var etApellidoPaternoPerfilUsuario : EditText
+    private lateinit var etApellidoMaternoPerfilUsuario : EditText
+    private lateinit var etTelefonoPerfilUsuario : EditText
+    private lateinit var etDireccionPerfilUsuario : EditText
+    private lateinit var etPasswordPerfilUsuario : EditText
+    private lateinit var  dpFechaNacimiento : DatePicker
+
+    private var correo = ""
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_perfil_usuario)
+
+        correo = (intent.extras!!.getSerializable("correo") as String?).toString()
+
+        etNombrePerfilUsuario = findViewById(R.id.etNombrePerfilUsuario)
+        etApellidoPaternoPerfilUsuario = findViewById(R.id.etApellidoPaternoPerfilUsuario)
+        etApellidoMaternoPerfilUsuario = findViewById(R.id.etApellidoMaternoPerfilUsuario)
+        etTelefonoPerfilUsuario = findViewById(R.id.etTelefonoPerfilUsuario)
+        etDireccionPerfilUsuario = findViewById(R.id.etDireccionPerfilUsuario)
+        etPasswordPerfilUsuario = findViewById(R.id.etPasswordPerfilUsuario)
+        dpFechaNacimiento = findViewById(R.id.dpFechaNacimientoAct)
+
 
         nav = findViewById(R.id.navPerfil)
         nav.setSelectedItemId(R.id.perfil)
@@ -39,5 +68,61 @@ class PerfilUsuarioActivity : AppCompatActivity() {
             true
         }
 
+        cargarInformacionUsuarios(correo)
+
     }
+
+    private fun cargarInformacionUsuarios(correo : String){
+
+        Ion.getDefault(this@PerfilUsuarioActivity).conscryptMiddleware.enable(false)
+        Ion.with(this@PerfilUsuarioActivity).load("POST",Constantes.URL_WS+"usuarios/obtenerUsuario")
+            .setHeader("Content-Type","application/x-www-form-urlencoded")
+            .setBodyParameter("correo",correo)
+            .asString()
+            .setCallback{e,result ->
+                if (e!= null) {
+                    mostrarAlerta("Error de conexión")
+                }else{
+                    llenarInfoUsuario(result)
+                }
+            }
+
+
+    }
+
+    private fun llenarInfoUsuario(usuarios: String){
+
+        val gson = Gson()
+        val infoUsuario = gson.fromJson(usuarios,Usuario::class.java)
+
+        etNombrePerfilUsuario.setText(infoUsuario.nombre)
+        etApellidoPaternoPerfilUsuario.setText(infoUsuario.apellidoPaterno)
+        etApellidoMaternoPerfilUsuario.setText(infoUsuario.apellidoMaterno)
+        etTelefonoPerfilUsuario.setText(infoUsuario.telefono)
+        etDireccionPerfilUsuario.setText(infoUsuario.direccion)
+        etPasswordPerfilUsuario.setText(infoUsuario.password)
+
+        var defaultDate = infoUsuario.fechaNacimiento.toString().split(Regex("-"))
+        var dd = defaultDate[2].toInt()
+        var mm = defaultDate[1].toInt()-1
+        var yy = defaultDate[0].toInt()
+
+        dpFechaNacimiento.updateDate(yy,mm,dd)
+
+        Toast.makeText(this@PerfilUsuarioActivity,"${infoUsuario.nombre}||${infoUsuario.apellidoPaterno}||${infoUsuario.apellidoMaterno}||" +
+                "${infoUsuario.telefono}||${infoUsuario.direccion}||${infoUsuario.password}"
+            ,Toast.LENGTH_LONG).show()
+
+
+
+    }
+
+    private fun mostrarAlerta(mensaje: String){
+        Toast.makeText(this@PerfilUsuarioActivity, mensaje, Toast.LENGTH_LONG).show()
+    }
+
+
+
+
+
 }

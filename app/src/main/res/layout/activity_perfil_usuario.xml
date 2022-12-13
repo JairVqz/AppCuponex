@@ -161,7 +161,7 @@
                 android:textColor="@color/black"/>
 
             <DatePicker
-                android:id="@+id/dpFechaNacimientoCrearCuentaComplemento"
+                android:id="@+id/dpFechaNacimientoAct"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:calendarViewShown="false"

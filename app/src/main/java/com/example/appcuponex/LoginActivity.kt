@@ -16,6 +16,8 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var etCorreo : EditText
     private lateinit var etPassword : EditText
 
+    private var correo = ""
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
@@ -80,6 +82,8 @@ class LoginActivity : AppCompatActivity() {
             //Credenciales correctas
             mostrarAlerta("Bienvenido: "+respuestaWS.nombre)
             val intent = Intent(this@LoginActivity,PrincipalUsuarioActivity::class.java)
+            Toast.makeText(this@LoginActivity,"Correo: ${etCorreo.text.toString()}||",Toast.LENGTH_LONG).show()
+            intent.putExtra("correo",etCorreo.text.toString())
             startActivity(intent)
             finish()
         }
