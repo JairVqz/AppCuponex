@@ -10,11 +10,19 @@
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="promos"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true"
+        android:text="Selecciona una categoría para mostrar las promociones"
+    />
+
+    <Spinner
+        android:id="@+id/spCategorias"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView5"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+    />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/navPromociones"
