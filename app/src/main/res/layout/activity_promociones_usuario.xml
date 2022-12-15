@@ -109,19 +109,46 @@
             tools:text="Tipo de promoción" />
 
         <TextView
-            android:id="@+id/tvEmpresaPromocion"
+            android:id="@+id/tvDescripcionPromocion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tvTipoPromocion"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="30dp"
-            tools:text="Tipo de promoción" />
+            tools:text="Descripción de promoción" />
+
+        <TextView
+            android:id="@+id/tvEmpresaPromocion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvDescripcionPromocion"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            tools:text="Sucursal de promoción" />
+
+        <TextView
+            android:id="@+id/tvRestriccionPromocion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvEmpresaPromocion"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            tools:text="Restricción de promoción" />
+
+        <TextView
+            android:id="@+id/tvPorcentajePromocion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvRestriccionPromocion"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            tools:text="Porcentaje de promoción" />
 
         <ImageView
             android:id="@+id/ivFotoPromocion"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:layout_below="@+id/tvEmpresaPromocion"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_below="@+id/tvPorcentajePromocion"
             android:layout_marginTop="50dp"
             app:srcCompat="@android:drawable/ic_menu_gallery"
             android:layout_centerHorizontal="true"

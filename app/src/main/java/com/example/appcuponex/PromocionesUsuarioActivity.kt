@@ -31,6 +31,10 @@ class PromocionesUsuarioActivity : AppCompatActivity(), AdapterView.OnItemSelect
     private lateinit var tvEmpresaPromocion : TextView
     private lateinit var ivFotoPromocion : ImageView
 
+    private lateinit var tvDescripcionPromocion : TextView
+    private lateinit var tvRestriccionPromocion : TextView
+    private lateinit var tvPorcentajePromocion : TextView
+
     var listaPromociones = ArrayList<Promocion>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -76,6 +80,11 @@ class PromocionesUsuarioActivity : AppCompatActivity(), AdapterView.OnItemSelect
         tvTipoPromocion = findViewById(R.id.tvTipoPromocion)
         tvEmpresaPromocion = findViewById(R.id.tvEmpresaPromocion)
         ivFotoPromocion = findViewById(R.id.ivFotoPromocion)
+
+        tvDescripcionPromocion = findViewById(R.id.tvDescripcionPromocion)
+        tvRestriccionPromocion = findViewById(R.id.tvRestriccionPromocion)
+        tvPorcentajePromocion = findViewById(R.id.tvPorcentajePromocion)
+
         //descargarInfoPromociones()
         btnC1.setOnClickListener{descargarInfoPromociones("201")}
         btnC2.setOnClickListener{descargarInfoPromociones("202")}
@@ -154,9 +163,14 @@ class PromocionesUsuarioActivity : AppCompatActivity(), AdapterView.OnItemSelect
         val infoPromo = gson.fromJson(informacion,Promocion::class.java)
 
         tvTituloPromocion.text = "${infoPromo.nombre}"
-        tvVigenciaPromocion.text = "${infoPromo.fechaInicio} - ${infoPromo.fechaTermino}"
-        tvTipoPromocion.text = "${infoPromo.tipoPromocion}"
-        tvEmpresaPromocion.text = "${infoPromo.idSucursal}"
+        tvVigenciaPromocion.text = "Vigencia: \n ${infoPromo.fechaInicio} - ${infoPromo.fechaTermino}"
+        tvTipoPromocion.text = "Tipo: ${infoPromo.tipoPromocion}"
+        tvEmpresaPromocion.text = "Empresa: ${infoPromo.idSucursal}"
+
+        tvDescripcionPromocion.text = "Descripción: ${infoPromo.descripcion}"
+        tvRestriccionPromocion.text = "Restricciones: ${infoPromo.restricciones}"
+        tvPorcentajePromocion.text = "Porcentaje: ${infoPromo.porcentaje}"
+
         //Conversión de imagen
         val byteImg = Base64.decode(infoPromo.fotoPromocion, Base64.DEFAULT)
         val bitMapImg = BitmapFactory.decodeByteArray(byteImg, 0, byteImg.size)
