@@ -166,7 +166,7 @@ class PromocionesUsuarioActivity : AppCompatActivity(), AdapterView.OnItemSelect
         tvVigenciaPromocion.text = "Vigencia: \n ${infoPromo.fechaInicio} - ${infoPromo.fechaTermino}"
         //tvTipoPromocion.text = "Tipo: ${infoPromo.tipoPromocion}"
         tvTipoPromocion.text = "Tipo: ${infoPromo.nombreTipoPromocion}"
-        tvEmpresaPromocion.text = "Empresa: ${infoPromo.idSucursal}"
+        tvEmpresaPromocion.text = "Empresa: ${infoPromo.nombreEmpresa}"
 
         tvDescripcionPromocion.text = "Descripción: ${infoPromo.descripcion}"
         tvRestriccionPromocion.text = "Restricciones: ${infoPromo.restricciones}"

@@ -17,6 +17,7 @@ class Promocion {
     var fotoPromocion : String = ""
 
     var nombreTipoPromocion : String = ""
+    var nombreEmpresa : String = ""
 
     override fun toString(): String {
         return nombre
