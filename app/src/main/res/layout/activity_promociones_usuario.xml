@@ -117,6 +117,17 @@
             android:layout_marginTop="30dp"
             tools:text="Tipo de promoción" />
 
+        <ImageView
+            android:id="@+id/ivFotoPromocion"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_below="@+id/tvEmpresaPromocion"
+            android:layout_marginTop="50dp"
+            app:srcCompat="@android:drawable/ic_menu_gallery"
+            android:layout_centerHorizontal="true"
+        />
+
+        <!--
         <Button
             android:id="@+id/btnVerDetallePromocion"
             android:text="Ver detalle de la promoción"
@@ -125,9 +136,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
             android:layout_height="wrap_content"/>
-
-
-
+        -->
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/navPromociones"
             android:layout_width="match_parent"

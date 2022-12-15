@@ -1,8 +1,10 @@
 package com.example.appcuponex
 
 import android.content.Intent
+import android.graphics.BitmapFactory
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Base64
 import android.view.View
 import android.widget.*
 import com.example.appcuponex.poko.Promocion
@@ -22,6 +24,12 @@ class PromocionesUsuarioActivity : AppCompatActivity(), AdapterView.OnItemSelect
     private lateinit var btnC4 : Button
     private lateinit var btnC5 : Button
     private lateinit var spPromociones : Spinner
+
+    private lateinit var tvTituloPromocion : TextView
+    private lateinit var tvVigenciaPromocion : TextView
+    private lateinit var tvTipoPromocion : TextView
+    private lateinit var tvEmpresaPromocion : TextView
+    private lateinit var ivFotoPromocion : ImageView
 
     var listaPromociones = ArrayList<Promocion>()
 
@@ -63,6 +71,11 @@ class PromocionesUsuarioActivity : AppCompatActivity(), AdapterView.OnItemSelect
         btnC5 = findViewById(R.id.btnC5)
         spPromociones = findViewById(R.id.spPromociones)
 
+        tvTituloPromocion = findViewById(R.id.tvTituloPromocion)
+        tvVigenciaPromocion = findViewById(R.id.tvVigenciaPromocion)
+        tvTipoPromocion = findViewById(R.id.tvTipoPromocion)
+        tvEmpresaPromocion = findViewById(R.id.tvEmpresaPromocion)
+        ivFotoPromocion = findViewById(R.id.ivFotoPromocion)
         //descargarInfoPromociones()
         btnC1.setOnClickListener{descargarInfoPromociones("201")}
         btnC2.setOnClickListener{descargarInfoPromociones("202")}
@@ -121,8 +134,39 @@ class PromocionesUsuarioActivity : AppCompatActivity(), AdapterView.OnItemSelect
         Toast.makeText(this@PromocionesUsuarioActivity, mensaje, Toast.LENGTH_LONG).show()
     }
 
+    private fun descargarFotoPromocion(idPromocion : Int){
+        Ion.with(this@PromocionesUsuarioActivity)
+           //.load("GET",Constantes.URL_WS+"obtenerFoto/"+idPromocion)
+           .load("GET",Constantes.URL_WS+"usuarios/obtenerFoto/"+idPromocion)
+           .asString()
+           .setCallback{e,result->
+               if( e!= null ){
+                   mostrarAlerta(e.message!!)
+               }else{
+                   Toast.makeText(this@PromocionesUsuarioActivity,"result: "+result+"|||",Toast.LENGTH_LONG).show()
+                   cargarInformacion(result)
+               }
+           }
+    }
+
+    private fun cargarInformacion(informacion : String){
+        val gson = Gson()
+        val infoPromo = gson.fromJson(informacion,Promocion::class.java)
+
+        tvTituloPromocion.text = "${infoPromo.nombre}"
+        tvVigenciaPromocion.text = "${infoPromo.fechaInicio} - ${infoPromo.fechaTermino}"
+        tvTipoPromocion.text = "${infoPromo.tipoPromocion}"
+        tvEmpresaPromocion.text = "${infoPromo.idSucursal}"
+        //Conversión de imagen
+        val byteImg = Base64.decode(infoPromo.fotoPromocion, Base64.DEFAULT)
+        val bitMapImg = BitmapFactory.decodeByteArray(byteImg, 0, byteImg.size)
+        ivFotoPromocion.setImageBitmap(bitMapImg)
+    }
+
     override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long){
         //descargarFotoMedico(listaMedicos.get(p2).idMedico)
+        Toast.makeText(this@PromocionesUsuarioActivity,"onItemS"+listaPromociones.get(p2).idPromocion,Toast.LENGTH_LONG).show()
+        descargarFotoPromocion(listaPromociones.get(p2).idPromocion)
     }
 
     override fun onNothingSelected(p0: AdapterView<*>?){
