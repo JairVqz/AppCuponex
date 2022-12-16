@@ -102,7 +102,7 @@ class CrearCuentaComplementoActivity : AppCompatActivity() {
                     mostrarAlerta("Error de conexión"+e.message)
                 }else{
                 val intent = Intent(this@CrearCuentaComplementoActivity,PrincipalUsuarioActivity::class.java)
-                //intent.putExtra("correo", correo)
+                intent.putExtra("correo", correo)
                 startActivity(intent)
                 }
 

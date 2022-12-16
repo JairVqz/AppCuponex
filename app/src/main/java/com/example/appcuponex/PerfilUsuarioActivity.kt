@@ -121,10 +121,11 @@ class PerfilUsuarioActivity : AppCompatActivity() {
 
         dpFechaNacimiento.updateDate(yy,mm,dd)
 
+        /*
         Toast.makeText(this@PerfilUsuarioActivity,"ID:${infoUsuario.idUsuario} || \n${infoUsuario.nombre}||${infoUsuario.apellidoPaterno}||${infoUsuario.apellidoMaterno}||" +
                 "${infoUsuario.telefono}||${infoUsuario.direccion}||${infoUsuario.password}"
             ,Toast.LENGTH_LONG).show()
-
+        */
 
 
     }
@@ -143,7 +144,6 @@ class PerfilUsuarioActivity : AppCompatActivity() {
         var password = etPasswordPerfilUsuario.text.toString()
 
         val fechaNacimiento = Calendar.getInstance()
-        var fecha =""
         //Toast.makeText(this@PerfilUsuarioActivity,"en actualizar datosID:${idUsuario} ||"
         //    ,Toast.LENGTH_LONG).show()
 
@@ -153,9 +153,8 @@ class PerfilUsuarioActivity : AppCompatActivity() {
         { view, year, month, day ->
             val month = month + 1
             val msg = "$year/$month/$day"
-            //fecha = "$year/$month/$day"
 
-            Toast.makeText(this@PerfilUsuarioActivity,"||Lamdafecha: ${msg}"    ,Toast.LENGTH_LONG).show()
+            //Toast.makeText(this@PerfilUsuarioActivity,"||Lamdafecha: ${msg}"    ,Toast.LENGTH_LONG).show()
             consumirModificar(idUsuario,nombre,apellidoPaterno,apellidoMaterno,telefono,direccion,msg,password)
 
         }

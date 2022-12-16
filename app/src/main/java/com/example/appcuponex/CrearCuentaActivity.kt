@@ -13,7 +13,6 @@ class CrearCuentaActivity : AppCompatActivity() {
 
     private lateinit var etCorreo : EditText
     private lateinit var etPassword : EditText
-    private lateinit var etPasswordConfirm : EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,14 +21,11 @@ class CrearCuentaActivity : AppCompatActivity() {
 
         etCorreo = findViewById(R.id.etCorreoCrearCuenta)
         etPassword = findViewById(R.id.etPasswordCrearCuenta)
-        etPasswordConfirm = findViewById(R.id.etConfirmarPasswordCrearCuenta)
 
         val btnCrearCuentaUsuario = findViewById<Button>(R.id.btnCrearCuentaUsuario)
 
         btnCrearCuentaUsuario.setOnClickListener {
             verificarCamposCrearCuenta()
-            //val intent = Intent(this@CrearCuentaActivity,CrearCuentaComplementoActivity::class.java)
-            //startActivity(intent)
         }
 
     }
@@ -38,19 +34,13 @@ class CrearCuentaActivity : AppCompatActivity() {
         var camposValidos = true
         var correoTx = etCorreo.text.toString()
         var passwordTx = etPassword.text.toString()
-        var passwordConfirmTx = etPasswordConfirm.text.toString()
         if(correoTx.isEmpty()){
             etCorreo.setError("Correo requerido")
             camposValidos = false
         }
-        if (passwordTx.isEmpty() || passwordConfirmTx.isEmpty()){
-            //etPassword.setError("Contraseña requerida")
-            //camposValidos = false
-
-            if(!passwordTx.equals(passwordConfirmTx) ){
-                etPassword.setError("Las contraseñas no coinciden")
-                camposValidos = false
-            }
+        if (passwordTx.isEmpty()){
+            etPassword.setError("Contraseña requerida")
+            camposValidos = false
 
         }
         if (camposValidos){

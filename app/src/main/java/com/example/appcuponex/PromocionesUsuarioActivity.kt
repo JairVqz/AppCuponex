@@ -95,26 +95,7 @@ class PromocionesUsuarioActivity : AppCompatActivity(), AdapterView.OnItemSelect
     }
 
     private fun descargarInfoPromociones(idCateg : String){
-        /*
-        var idCateg = 0
 
-        if (btnC1.isPressed){
-            idCateg = 201
-            Toast.makeText(this@PromocionesUsuarioActivity, "presionado: "+idCateg, Toast.LENGTH_LONG).show()
-        }else if (btnC2.isPressed){
-            idCateg = 202
-            Toast.makeText(this@PromocionesUsuarioActivity, "presionado: "+idCateg, Toast.LENGTH_LONG).show()
-        }else if (btnC3.isPressed){
-            idCateg = 203
-            Toast.makeText(this@PromocionesUsuarioActivity, "presionado: "+idCateg, Toast.LENGTH_LONG).show()
-        }else if (btnC4.isPressed){
-            idCateg = 204
-            Toast.makeText(this@PromocionesUsuarioActivity, "presionado: "+idCateg, Toast.LENGTH_LONG).show()
-        }else if (btnC5.isPressed){
-            idCateg = 205
-            Toast.makeText(this@PromocionesUsuarioActivity, "presionado: "+idCateg, Toast.LENGTH_LONG).show()
-        }
-        */
         Ion.with(this@PromocionesUsuarioActivity)
            .load("GET",Constantes.URL_WS+"usuarios/bycategoria/"+idCateg)
            .asString()
@@ -152,7 +133,7 @@ class PromocionesUsuarioActivity : AppCompatActivity(), AdapterView.OnItemSelect
                if( e!= null ){
                    mostrarAlerta(e.message!!)
                }else{
-                   Toast.makeText(this@PromocionesUsuarioActivity,"result: "+result+"|||",Toast.LENGTH_LONG).show()
+                   //Toast.makeText(this@PromocionesUsuarioActivity,"result: "+result+"|||",Toast.LENGTH_LONG).show()
                    cargarInformacion(result)
                }
            }
@@ -163,14 +144,14 @@ class PromocionesUsuarioActivity : AppCompatActivity(), AdapterView.OnItemSelect
         val infoPromo = gson.fromJson(informacion,Promocion::class.java)
 
         tvTituloPromocion.text = "${infoPromo.nombre}"
-        tvVigenciaPromocion.text = "Vigencia: \n ${infoPromo.fechaInicio} - ${infoPromo.fechaTermino}"
+        tvVigenciaPromocion.text = "${infoPromo.fechaInicio} - ${infoPromo.fechaTermino}"
         //tvTipoPromocion.text = "Tipo: ${infoPromo.tipoPromocion}"
-        tvTipoPromocion.text = "Tipo: ${infoPromo.nombreTipoPromocion}"
-        tvEmpresaPromocion.text = "Empresa: ${infoPromo.nombreEmpresa}"
+        tvTipoPromocion.text = "${infoPromo.nombreTipoPromocion}"
+        tvEmpresaPromocion.text = "${infoPromo.nombreEmpresa}"
 
-        tvDescripcionPromocion.text = "Descripción: ${infoPromo.descripcion}"
-        tvRestriccionPromocion.text = "Restricciones: ${infoPromo.restricciones}"
-        tvPorcentajePromocion.text = "Porcentaje: ${infoPromo.porcentaje}"
+        tvDescripcionPromocion.text = "${infoPromo.descripcion}"
+        tvRestriccionPromocion.text = "${infoPromo.restricciones}"
+        tvPorcentajePromocion.text = "${infoPromo.porcentaje}"
 
         //Conversión de imagen
         val byteImg = Base64.decode(infoPromo.fotoPromocion, Base64.DEFAULT)
@@ -180,7 +161,7 @@ class PromocionesUsuarioActivity : AppCompatActivity(), AdapterView.OnItemSelect
 
     override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long){
         //descargarFotoMedico(listaMedicos.get(p2).idMedico)
-        Toast.makeText(this@PromocionesUsuarioActivity,"onItemS"+listaPromociones.get(p2).idPromocion,Toast.LENGTH_LONG).show()
+        //Toast.makeText(this@PromocionesUsuarioActivity,"onItemS"+listaPromociones.get(p2).idPromocion,Toast.LENGTH_LONG).show()
         descargarFotoPromocion(listaPromociones.get(p2).idPromocion)
     }
 

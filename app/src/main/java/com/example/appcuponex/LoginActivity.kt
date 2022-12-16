@@ -66,7 +66,6 @@ class LoginActivity : AppCompatActivity() {
             .setCallback { e, result ->
                 if(e != null){
                     mostrarAlerta("Error de conexión...")
-                    //Toast.makeText(this@LoginActivity, e.message, Toast.LENGTH_LONG).show()
                 }else{
                     validarRespuesta(result)
                 }
@@ -82,7 +81,7 @@ class LoginActivity : AppCompatActivity() {
             //Credenciales correctas
             mostrarAlerta("Bienvenido: "+respuestaWS.nombre)
             val intent = Intent(this@LoginActivity,PrincipalUsuarioActivity::class.java)
-            Toast.makeText(this@LoginActivity,"Correo: ${etCorreo.text.toString()}||",Toast.LENGTH_LONG).show()
+            //Toast.makeText(this@LoginActivity,"Correo: ${etCorreo.text.toString()}||",Toast.LENGTH_LONG).show()
             intent.putExtra("correo",etCorreo.text.toString())
             startActivity(intent)
             finish()

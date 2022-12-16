@@ -116,14 +116,6 @@
         android:layout_centerHorizontal="true"
     />
 
-    <ImageView
-        android:layout_width="603sp"
-        android:layout_height="518sp"
-        android:layout_below="@+id/textView10"
-        android:layout_centerHorizontal="true"
-        android:src="@drawable/uvlogo"
-    />
-
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/navActivityPrincipal"
         android:layout_width="match_parent"
