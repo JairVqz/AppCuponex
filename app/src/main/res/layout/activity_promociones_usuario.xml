@@ -88,60 +88,141 @@
             android:layout_below="@+id/spPromociones"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="30dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="20dp"
             tools:text="titulo de la promoción" />
 
         <TextView
-            android:id="@+id/tvVigenciaPromocion"
+            android:id="@+id/txtVigenciaPromocion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tvTituloPromocion"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="30dp"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:text="Vigencia" />
+
+        <TextView
+            android:id="@+id/tvVigenciaPromocion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtVigenciaPromocion"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/black"
+            android:textSize="18dp"
             tools:text="Vigencia" />
 
         <TextView
-            android:id="@+id/tvTipoPromocion"
+            android:id="@+id/txtTipoPromocion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tvVigenciaPromocion"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="30dp"
-            tools:text="Tipo de promoción" />
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:text="Tipo de promoción" />
 
         <TextView
-            android:id="@+id/tvDescripcionPromocion"
+            android:id="@+id/tvTipoPromocion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtTipoPromocion"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:layout_marginTop="10dp"
+            tools:text="Tipo" />
+
+        <TextView
+            android:id="@+id/txtDescripcionPromocion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tvTipoPromocion"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="30dp"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:text="Descripción" />
+
+        <TextView
+            android:id="@+id/tvDescripcionPromocion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtDescripcionPromocion"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:textSize="18dp"
+            android:textColor="@color/black"
             tools:text="Descripción de promoción" />
 
         <TextView
-            android:id="@+id/tvEmpresaPromocion"
+            android:id="@+id/txtEmpresaPromocion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tvDescripcionPromocion"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="30dp"
-            tools:text="Sucursal de promoción" />
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:text="Empresa" />
 
         <TextView
-            android:id="@+id/tvRestriccionPromocion"
+            android:id="@+id/tvEmpresaPromocion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtEmpresaPromocion"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            tools:text="empresa" />
+
+        <TextView
+            android:id="@+id/txtRestriccionPromocion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tvEmpresaPromocion"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="30dp"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:text="Restricciones" />
+
+        <TextView
+            android:id="@+id/tvRestriccionPromocion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtRestriccionPromocion"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:textSize="18dp"
+            android:textColor="@color/black"
             tools:text="Restricción de promoción" />
 
         <TextView
-            android:id="@+id/tvPorcentajePromocion"
+            android:id="@+id/txtPorcentajePromocion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tvRestriccionPromocion"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="30dp"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:text="Procetaje" />
+
+        <TextView
+            android:id="@+id/tvPorcentajePromocion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtPorcentajePromocion"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/black"
+            android:textSize="18dp"
             tools:text="Porcentaje de promoción" />
 
         <ImageView
